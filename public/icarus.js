@@ -9,7 +9,7 @@ let progressVal = progress.value;
 
 doc.addEventListener('input', function(e){
   console.log("changed");
-  progressVal += 1;
+  progressVal += 0.5;
   progress.value = progressVal;
   let data = {
     val: progressVal,
@@ -22,7 +22,7 @@ doc.addEventListener('input', function(e){
 setInterval(readytoSubmit, 1000);
 
 function readytoSubmit(){
-  if(progress.value > 50){
+  if(progress.value > 95){
     document.getElementById("submit").style.visibility = "visible";
   }
 }
