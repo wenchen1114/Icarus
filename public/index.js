@@ -33,7 +33,7 @@ button1.addEventListener("click", function (e) {
 });
 
 button2.addEventListener("click", function(){
-  if(timeCount2 < 10){
+  if(timeCount2 < 12){
   deleteVal(3);
   let data = {
     alertText: 'Your post goes against our community guidelines. “Our system flagged your post because it contains suspicious information that may cause the risk of negatively affecting other users. On continuing the action, your account may be deleted and in the worst-case filed with a lawsuit”',
@@ -42,13 +42,14 @@ button2.addEventListener("click", function(){
   socket.emit('alert click', data);
   timeCount2++;
 }else{
+  button1.style.visibility = "hidden";
   alert("You have no access to do it.");
 }
 })
 
 button3.addEventListener("click", function () {
 
-  if(timeCount3 < 7){
+  if(timeCount3 < 10){
   deleteWord();
   let data={
     newText: text,
@@ -58,6 +59,7 @@ button3.addEventListener("click", function () {
   timeCount3++;
   console.log(timeCount);
 }else{
+  button1.style.visibility = "hidden";
   alert("Action denied.");
 }
 });
@@ -73,6 +75,7 @@ button4.addEventListener("click", function () {
   socket.emit('change click', data);
   timeCount4++;
   }else{
+    button1.style.visibility = "hidden";
     alert("Action Denied");
   }
 });
