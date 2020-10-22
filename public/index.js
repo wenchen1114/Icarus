@@ -53,6 +53,7 @@ button3.addEventListener("click", function () {
   }
   socket.emit('delete click', data);
   timeCount++;
+  console.log(timeCount);
 }else{
   alert("Action denied.");
 }
@@ -91,7 +92,7 @@ function deleteWord() {
   words = text.split(" ");
   let censorWords = [];
   for(let i = 0; i< words.length; i++){
-    if(words[i] == "Area" || words[i] == "51," || words[i] == "Alien" || words[i] == "In" || words[i] == "1985"){
+    if(words[i] == "Area" || words[i] == "area" || words[i] == "51," || words[i] == "Alien" || words[i] == "In" || words[i] == "in" || words[i] == "1985,"){
       censorWords.push(i);
     }
   };
