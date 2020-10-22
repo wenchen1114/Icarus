@@ -11,6 +11,8 @@ let progress = document.getElementById("progress");
 let progressVal = progress.value;
 
 button1.addEventListener("click", function (e) {
+  let timeCount = 0;
+  if(timeCount < 5){
   let randomNum = Math.floor(Math.random() * words.length + 1);
   addNo(randomNum);
   e.preventDefault();
@@ -19,41 +21,61 @@ button1.addEventListener("click", function (e) {
     val: progressVal
   }
   socket.emit('button click', data);
+}else{
+  button1.style.visibility = "hidden";
+  alert("You have no access to do it.");
+}
 });
 
 button2.addEventListener("click", function(){
-  deleteVal(0.5);
+  let timeCount = 0;
+  if(timeCount < 10){
+  deleteVal(1);
   let data = {
     alertText: 'Your post goes against our community guidelines. “Our system flagged your post because it contains suspicious information that may cause the risk of negatively affecting other users. On continuing the action, your account may be deleted and in the worst-case filed with a lawsuit”',
     val: progressVal
   }
   socket.emit('alert click', data);
+  timeCount++;
+}else{
+  alert("You have no access to do it.");
+}
 })
 
 button3.addEventListener("click", function () {
+  let timeCount = 0;
+  if(timeCount < 7){
   deleteWord();
   let data={
     newText: text,
     val: progressVal
   }
   socket.emit('delete click', data);
+}else{
+  alert("Action denied.");
+}
 });
 
 button4.addEventListener("click", function () {
+  let timeCount = 0;
+  if(timeCount < 10){
   changeWord();
   let data={
     newText: text,
     val: progressVal
   }
   socket.emit('change click', data);
+  }else{
+    alert("Action Denied");
+  }
 });
 
 function addNo(x) {
   words = text.split(" ");
-  if (words[x] == "is" || words[x] == "particularly") {
+  if (words[x] == "is" || words[x] == "particularly" || words[x] == "was") {
     words.splice(x+1, 0, "not");
     let newWords = words.join(" ");
-    deleteVal(2);
+    deleteVal(3);
     text = newWords;
     document.getElementById("doc").innerHTML = newWords;
   } else {
@@ -75,7 +97,7 @@ function deleteWord() {
   if(censorWords.length !== 0){
   randomNum = Math.floor(Math.random() * censorWords.length);
   words.splice(censorWords[randomNum], 1);
-  deleteVal(3);
+  deleteVal(5);
   }
   censorWords = [];
   let newWords = words.join(" ");
@@ -146,7 +168,7 @@ function changeWord(x) {
       text = newWords;
       document.getElementById("doc").innerHTML = newWords;
     }
-    deleteVal(3);
+    deleteVal(7);
   }
   // if (words[x] !== "" && words[x] !== "No") {
   //   words[x] = words[x].strike();
