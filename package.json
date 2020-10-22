@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "main": "index.html",
   "scripts": {
-    "start": "parcel index.html --open",
-    "build": "parcel build index.html"
+    "start": "node server.js"
   },
   "dependencies": {
     "array-flatten": "^3.0.0",
@@ -24,8 +23,13 @@
     "@babel/core": "7.2.0",
     "parcel-bundler": "^1.6.1"
   },
-  "keywords": [],
+  "keywords": [
+    "heroku"
+  ],
   "author": "wenchen1114",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "engines": {
+    "node": "12.19.0"
+  }
 }
