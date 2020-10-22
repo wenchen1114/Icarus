@@ -22,7 +22,7 @@ doc.addEventListener('input', function(e){
 setInterval(readytoSubmit, 1000);
 
 function readytoSubmit(){
-  if(progress.value > 210){
+  if(progress.value > 295){
     document.getElementById("submit").style.visibility = "visible";
   }
 }
