@@ -21,6 +21,7 @@ button1.addEventListener("click", function (e) {
     val: progressVal
   }
   socket.emit('button click', data);
+  timeCount++;
 }else{
   button1.style.visibility = "hidden";
   alert("You have no access to do it.");
@@ -51,6 +52,7 @@ button3.addEventListener("click", function () {
     val: progressVal
   }
   socket.emit('delete click', data);
+  timeCount++;
 }else{
   alert("Action denied.");
 }
@@ -65,6 +67,7 @@ button4.addEventListener("click", function () {
     val: progressVal
   }
   socket.emit('change click', data);
+  timeCount++;
   }else{
     alert("Action Denied");
   }
