@@ -10,9 +10,13 @@ let button4 = document.getElementById("button4");
 let progress = document.getElementById("progress");
 let progressVal = progress.value;
 
+let timeCount1 = 0;
+let timeCount2 = 0;
+let timeCount3 = 0;
+let timeCount4 = 0;
+
 button1.addEventListener("click", function (e) {
-  let timeCount = 0;
-  if(timeCount < 5){
+  if(timeCount1 < 7){
   let randomNum = Math.floor(Math.random() * words.length + 1);
   addNo(randomNum);
   e.preventDefault();
@@ -21,7 +25,7 @@ button1.addEventListener("click", function (e) {
     val: progressVal
   }
   socket.emit('button click', data);
-  timeCount++;
+  timeCount1++;
 }else{
   button1.style.visibility = "hidden";
   alert("You have no access to do it.");
@@ -29,30 +33,29 @@ button1.addEventListener("click", function (e) {
 });
 
 button2.addEventListener("click", function(){
-  let timeCount = 0;
-  if(timeCount < 10){
-  deleteVal(1);
+  if(timeCount2 < 10){
+  deleteVal(3);
   let data = {
     alertText: 'Your post goes against our community guidelines. “Our system flagged your post because it contains suspicious information that may cause the risk of negatively affecting other users. On continuing the action, your account may be deleted and in the worst-case filed with a lawsuit”',
     val: progressVal
   }
   socket.emit('alert click', data);
-  timeCount++;
+  timeCount2++;
 }else{
   alert("You have no access to do it.");
 }
 })
 
 button3.addEventListener("click", function () {
-  let timeCount = 0;
-  if(timeCount < 7){
+
+  if(timeCount3 < 7){
   deleteWord();
   let data={
     newText: text,
     val: progressVal
   }
   socket.emit('delete click', data);
-  timeCount++;
+  timeCount3++;
   console.log(timeCount);
 }else{
   alert("Action denied.");
@@ -60,15 +63,15 @@ button3.addEventListener("click", function () {
 });
 
 button4.addEventListener("click", function () {
-  let timeCount = 0;
-  if(timeCount < 10){
+
+  if(timeCount4 < 10){
   changeWord();
   let data={
     newText: text,
     val: progressVal
   }
   socket.emit('change click', data);
-  timeCount++;
+  timeCount4++;
   }else{
     alert("Action Denied");
   }
@@ -79,7 +82,7 @@ function addNo(x) {
   if (words[x] == "is" || words[x] == "particularly" || words[x] == "was") {
     words.splice(x+1, 0, "not");
     let newWords = words.join(" ");
-    deleteVal(3);
+    deleteVal(5);
     text = newWords;
     document.getElementById("doc").innerHTML = newWords;
   } else {
