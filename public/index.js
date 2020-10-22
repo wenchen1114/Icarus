@@ -42,7 +42,7 @@ button2.addEventListener("click", function(){
   socket.emit('alert click', data);
   timeCount2++;
 }else{
-  button1.style.visibility = "hidden";
+  button2.style.visibility = "hidden";
   alert("You have no access to do it.");
 }
 })
@@ -59,7 +59,7 @@ button3.addEventListener("click", function () {
   timeCount3++;
   console.log(timeCount);
 }else{
-  button1.style.visibility = "hidden";
+  button3.style.visibility = "hidden";
   alert("Action denied.");
 }
 });
@@ -75,7 +75,7 @@ button4.addEventListener("click", function () {
   socket.emit('change click', data);
   timeCount4++;
   }else{
-    button1.style.visibility = "hidden";
+    button4.style.visibility = "hidden";
     alert("Action Denied");
   }
 });
