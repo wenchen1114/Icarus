@@ -121,7 +121,7 @@ function deleteWord() {
 function changeWord(x) {
   let censorWords = [];
   for(let i = 0; i< words.length; i++){
-    if(words[i] == "insist" || words[i] == "hid" || words[i] == "fact" || words[i] == "truth" || words[i] == "while" || words[i] == "true" || words[i] == "convince"){
+    if(words[i] == "insists" || words[i] == "hid," || words[i] == "fact" || words[i] == "truth" || words[i] == "while" || words[i] == "true" || words[i] == "convince"){
       censorWords.push(i);
       console.log(censorWords);
     }
@@ -129,13 +129,13 @@ function changeWord(x) {
 
   let randomNum = Math.floor(Math.random() * censorWords.length);
   if(censorWords.length !== 0){
-    if(words[censorWords[randomNum]] == "insist"){
+    if(words[censorWords[randomNum]] == "insists"){
       words[censorWords[randomNum]] = "proved";
       censorWords = [];
       let newWords = words.join(" ");
       text = newWords;
       document.getElementById("doc").innerHTML = newWords;
-    }else if(words[censorWords[randomNum]] == "hid"){
+    }else if(words[censorWords[randomNum]] == "hid,"){
       words[censorWords[randomNum]] = "proved";
       censorWords = [];
       let newWords = words.join(" ");
