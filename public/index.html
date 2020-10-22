@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="public/style.css">
+    
+  </head>
+
+  <body>
+    <div id="page">
+      <div id="left">
+        <div id="progress_container">
+          <p id="info">Here’s user’s progress:</p>
+          <progress id="progress" max="100" value="0"></progress>
+        </div>
+        <div id="doc_container">
+          <p id="doc"></p>
+      </div>
+    </div>
+      <div id="right">
+        <div id="button_container">
+          <div id="powers">
+            <span>Powers</span>
+          </div>
+          <button type="button" id="button1">Add "not"</button>
+          <button type="button" id="button4">Change Word</button>
+          <button type="button" id="button3">Delete</button>
+          <button type="button" id="button2">Alert</button>
+        </div>
+      </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+    <script src="public/index.js" async defer></script>
+  </body>
+</html>

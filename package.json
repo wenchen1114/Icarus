@@ -1,0 +1,31 @@
+{
+  "name": "dedalius",
+  "version": "1.0.0",
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html"
+  },
+  "dependencies": {
+    "array-flatten": "^3.0.0",
+    "content-disposition": "^0.5.3",
+    "content-type": "^1.0.4",
+    "express": "^4.15.2",
+    "finalhandler": "^1.1.2",
+    "merge-descriptors": "^1.0.1",
+    "methods": "^1.1.2",
+    "path-to-regexp": "^6.2.0",
+    "qs": "^6.9.4",
+    "setprototypeof": "^1.2.0",
+    "socket.io": "^2.3.0",
+    "utils-merge": "^1.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "7.2.0",
+    "parcel-bundler": "^1.6.1"
+  },
+  "keywords": [],
+  "author": "wenchen1114",
+  "license": "ISC",
+  "description": ""
+}

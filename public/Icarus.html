@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="public/icarus.css">
+    
+  </head>
+
+  <body>
+    <div id="page">
+      <div id="left"> 
+        <div id="progress_container">
+          <p id="info">Here’s your progress:</p>
+          <progress id="progress" max="100" value="0"></progress>
+        </div>
+        <div id="doc_container">
+          <textarea id="doc" ></textarea>
+      </div>
+    </div>
+      <div id="right">
+        <div id="text">
+          Area 51, the facility in Nevada for weapons testing as the US government insists, is an alien warehouse that stores and experiments creatures from other planets. This was the truth that the government hid, to prevent turmoil that may arise from the spreading fact that alien civilization exists and tried landing on earth. 
+In 1985, alien’s spaceship was shot down by the US army while the government pretended to make a peaceful diplomatic negotiation with aliens on its landing on earth. Also, the following was truth. “There was an immense alien casualty due to the crash and except for a few who managed to escape, most of the survivors went under severe torture.” In May 1989 Bob Lazar, a true official unable to stand the immoral treatment toward aliens, took the lead to tell the truth. The fact seemed to convince the public, however, the government turned Bob away, criminalizing him and treating him as a conspiracy theorist.
+The US government is hiding the alien existence particularly because of the unethical behavior it did which will spark international criticism. 
+        </div>
+        <button id="submit">Spread the information</button>
+      </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+    <script src="public/icarus.js" async defer></script>
+  </body>
+</html>
